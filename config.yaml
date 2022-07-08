@@ -22,6 +22,13 @@ CFG:
   logging_steps: 150
   evaluation_strategy: "epoch"
 
+  # Evaluation configuration
+  inference_model_name: "QuoQA-NLP/KE-T5-En2Ko-Base"
+  num_beams: 5
+  repetition_penalty: 1.3
+  no_repeat_ngram_size: 3
+  num_return_sequences: 1
+
   # Translation settings
   dset_name: "LeverageX/AIHUB-all-parallel-ko-en" # or LeverageX/AIHUB-socio-parallel-ko-en
   src_language: "en"
