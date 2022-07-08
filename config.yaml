@@ -1,0 +1,37 @@
+# Debug set to true in order to debug high-layer code.
+# CFG Configuration
+CFG:
+  DEBUG: false
+  train_batch_size: 120
+  valid_batch_size: 240
+
+  # Train configuration
+  num_epochs: 1 # validation loss is increasing after 5 epochs
+  num_checkpoints: 3
+  max_token_length: 64
+  stopwords: []
+  learning_rate: 0.0005 # has to be set as float explicitly due to https://stackoverflow.com/questions/30458977/yaml-loads-5e-6-as-string-and-not-a-number
+  weight_decay: 0.01 # https://paperswithcode.com/method/weight-decay
+  adam_beta_1: 0.9
+  adam_beta_2: 0.98
+  epsilon: 0.000000001
+  fp16: True
+  gradient_accumulation_steps: 2
+  eval_steps: 10
+  save_steps: 150
+
+  # Translation settings
+  dset_name: "LeverageX/AIHUB-socio-parallel-ko-en" # or LeverageX/AIHUB-all-parallel-ko-en
+  src_language: "en"
+  tgt_language: "ko"
+  model_name: "KETI-AIR/ke-t5-base"
+  num_inference_sample: 5000
+  dropout: 0.1
+
+  # wandb settings
+  entity_name: "quoqa-nlp"
+  project_name: "EN-TO-KO-Translation"
+
+  # root path
+  ROOT_PATH: "."
+  save_path: "./results"

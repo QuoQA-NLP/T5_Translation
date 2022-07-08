@@ -1,0 +1,7 @@
+__pycache__
+runs
+wandb
+_clones
+logs
+ke-t5-base-finetuned-en-to-ko
+results
