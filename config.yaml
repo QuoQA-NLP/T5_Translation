@@ -1,9 +1,10 @@
 # Debug set to true in order to debug high-layer code.
 # CFG Configuration
+# https://wandb.ai/poolc/huggingface/runs/r0pyyxyg/overview?workspace=user-snoop2head
 CFG:
   DEBUG: false
-  train_batch_size: 128
-  valid_batch_size: 256
+  train_batch_size: 64
+  valid_batch_size: 128
 
   # Train configuration
   num_epochs: 1 # validation loss is increasing after 5 epochs
@@ -15,13 +16,14 @@ CFG:
   adam_beta_1: 0.9
   adam_beta_2: 0.98
   epsilon: 0.000000001
-  fp16: True
+  fp16: false
   gradient_accumulation_steps: 2
-  eval_steps: 10
   save_steps: 150
+  logging_steps: 150
+  evaluation_strategy: "epoch"
 
   # Translation settings
-  dset_name: "LeverageX/AIHUB-socio-parallel-ko-en" # or LeverageX/AIHUB-all-parallel-ko-en
+  dset_name: "LeverageX/AIHUB-socio-parallel-ko-en" # or LeverageX/AIHUB-socio-parallel-ko-en
   src_language: "en"
   tgt_language: "ko"
   model_name: "KETI-AIR/ke-t5-base"

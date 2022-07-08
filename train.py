@@ -56,14 +56,15 @@ training_args = Seq2SeqTrainingArguments(
     weight_decay=CFG.weight_decay,
     per_device_train_batch_size=CFG.train_batch_size,
     per_device_eval_batch_size=CFG.valid_batch_size,
-    evaluation_strategy="steps",
-    eval_steps=CFG.eval_steps,
+    evaluation_strategy=CFG.evaluation_strategy,
+    # eval_steps=CFG.eval_steps,
     save_steps=CFG.save_steps,
     num_train_epochs=CFG.num_epochs,
     save_total_limit=CFG.num_checkpoints,
     predict_with_generate=True,
     fp16=CFG.fp16,
     gradient_accumulation_steps=CFG.gradient_accumulation_steps,
+    logging_steps=CFG.logging_steps,
 )
 
 wandb.config.update(training_args)
