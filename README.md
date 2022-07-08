@@ -1,5 +1,9 @@
 # T5 Machine Translation from English to Korean
 
+### Logs
+
+[🔗 WANDB](https://wandb.ai/quoqa-nlp/EN-TO-KO-Translation/)
+
 ### Dataset
 
 - [800k : 100k Sanity Check Parallel Corpus](https://huggingface.co/datasets/LeverageX/AIHUB-socio-parallel-ko-en)

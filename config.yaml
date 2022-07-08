@@ -2,8 +2,8 @@
 # CFG Configuration
 CFG:
   DEBUG: false
-  train_batch_size: 120
-  valid_batch_size: 240
+  train_batch_size: 128
+  valid_batch_size: 256
 
   # Train configuration
   num_epochs: 1 # validation loss is increasing after 5 epochs
