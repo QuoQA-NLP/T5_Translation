@@ -1,4 +1,5 @@
 import torch
+import pandas as pd
 import numpy as np
 from datasets import load_dataset, load_metric
 from transformers import (
@@ -25,7 +26,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name, use_auth_token=True)
 model.to(device)
 
 CPU_COUNT = multiprocessing.cpu_count() // 2
-selected_valid = valid_dataset.select(range(0, 10))
+selected_valid = valid_dataset.select(range(0, CFG.no_inference_sentences))
 src_sentences = selected_valid[CFG.src_language]
 tgt_sentences = selected_valid[CFG.tgt_language]
 
@@ -47,3 +48,6 @@ with torch.no_grad():
 # https://github.com/huggingface/transformers/issues/10704
 generated_texts = tokenizer.batch_decode(translated, skip_special_tokens=True)
 print(generated_texts)
+
+df = pd.DataFrame({"src": src_sentences, "tgt": tgt_sentences, "gen": generated_texts})
+df.to_csv(f"./results/translated-{CFG.no_inference_sentences}-sentences.csv", index=False)
