@@ -23,7 +23,7 @@ CFG:
   evaluation_strategy: "epoch"
 
   # Translation settings
-  dset_name: "LeverageX/AIHUB-socio-parallel-ko-en" # or LeverageX/AIHUB-socio-parallel-ko-en
+  dset_name: "LeverageX/AIHUB-all-parallel-ko-en" # or LeverageX/AIHUB-socio-parallel-ko-en
   src_language: "en"
   tgt_language: "ko"
   model_name: "KETI-AIR/ke-t5-base"
