@@ -82,9 +82,5 @@ for i in tqdm(range(start,cnt)):
     save_count=0
     df.to_csv(f"./results/tmp_translated-{save_start}-{end}-sentences.csv", index=False)
   csv_start = end
-
-
-
-
 # df = pd.DataFrame({"src": src_sentences, "tgt": tgt_sentences, "gen": generated_texts})
 # df.to_csv(f"./results/translated-{CFG.no_inference_sentences}-sentences.csv", index=False)
