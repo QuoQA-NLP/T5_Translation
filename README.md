@@ -2,6 +2,25 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://huggingface.co/spaces/QuoQA-NLP/QuoQaGo)
 
+### How to Use
+
+```python
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+# Korean -> English Machine Translation
+tokenizer = AutoTokenizer.from_pretrained("QuoQA-NLP/KE-T5-Ko2En-Base")
+model = AutoModelForSeq2SeqLM.from_pretrained("QuoQA-NLP/KE-T5-Ko2En-Base")
+
+# English -> Korean Machine Translation
+tokenizer = AutoTokenizer.from_pretrained("QuoQA-NLP/KE-T5-En2Ko-Base")
+model = AutoModelForSeq2SeqLM.from_pretrained("QuoQA-NLP/KE-T5-En2Ko-Base")
+```
+
+- For batch translation, please refer to [inference.py](./inference.py). 
+  - P100 16GB supports inferencing of 250 pairs  per batch on device.
+  - A100 40GB supports inferencing of 700 pairs  per batch on device.
+- For single sentence translation, please refer to [inference_single.py](./inference_single.py). 
+
 ### References
 
 - [🔗 Dataset specification](https://github.com/snoop2head/Deep-Encoder-Shallow-Decoder#dataset)
