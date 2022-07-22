@@ -27,7 +27,7 @@ device = "cuda:0" if torch.cuda.is_available() else "cpu"
 training_args = Seq2SeqTrainingArguments
 
 model_name = CFG.inference_model_name
-CFG_dset_name = "conceptual_captions"
+CFG.dset_name = "conceptual_captions"
 train_dataset = load_dataset(CFG.dset_name, split="train")
 valid_dataset = load_dataset(CFG.dset_name, split="validation")
 print(train_dataset)
