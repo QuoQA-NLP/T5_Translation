@@ -6,11 +6,11 @@
 
 |                   | BLEU Score |                                                Translation Result                                                |
 | :---------------: | :--------: | :--------------------------------------------------------------------------------------------------------------: |
-| English ➡️ Korean |   45.148   | [KE-T5-Ko2En-Base Inference Result](https://huggingface.co/datasets/QuoQA-NLP/KE-T5-Ko2En-Base-Inference-Result) |
-| Korean ➡️ English |     -      |                                                                                                                  |
+| Korean ➡️ English |   45.148   | [KE-T5-Ko2En-Base Inference Result](https://huggingface.co/datasets/QuoQA-NLP/KE-T5-Ko2En-Base-Inference-Result) |
+| English ➡️ Korean |     -      |                                                                                                                  |
 
 - Evaluation script is on [metric.py](./metric.py)
-- English ➡️ Korean Result evaluated on 553500 sentence pairs which are disjoint from the train set.
+- Korean ➡️ English Result evaluated on 553500 sentence pairs which are disjoint from the train set.
 
 ### How to Use
 
